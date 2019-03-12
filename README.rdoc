@@ -1,6 +1,6 @@
 = patent_client_ruby
 
-Description goes here.
+This is an experiment to learn ruby. It is currently broken - DO NOT USE
 
 == Contributing to patent_client_ruby
  

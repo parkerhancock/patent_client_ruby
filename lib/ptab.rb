@@ -45,7 +45,7 @@ module PtabManager
 
     def filter(*args, **kwargs)
         if args
-            kwargs[@default_filter] = args[0]
+            kwargs["trialNumber"] = args[0]
         end
         new_params = @params.merge(kwargs)
 
@@ -62,7 +62,7 @@ module PtabManager
                 new_key = new_key[0].downcase + new_key[1..]
                 url_params[new_key] = value
             end
-            response = @conn.get @path, url_params
+            response = @conn.get "ptab-api/trials", url_params
             @pages[page_no] = JSON.parse(response.body)
         end
         @pages[page_no]
@@ -74,11 +74,11 @@ module PtabManager
     end
 
     def each
-        record_class = Object.const_get(@record_class_name)
+        puts "Record Class #{self.record_class_name}"
         (0..(length-1)).each do |index|
-            position = index % @page_size
-            page_no = (index / @page_size).floor
-            yield record_class.new(get_page(page_no)["results"][position])
+            position = index % 25
+            page_no = (index / 25).floor
+            yield get_page(page_no)["results"][position]
         end
     end
 end
@@ -102,7 +102,9 @@ class PtabTrialManager
     include PtabManager
     @path = "ptab-api/trials"
     @default_filter = "trial_number"
-    @record_class_name = 'PtabTrial'
+    @record_class_name = "PtabTrial"
+
+    class << self; attr_accessor :record_class_name end
 end
 
 class PtabTrial < PtabModel

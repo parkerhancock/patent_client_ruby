@@ -23,6 +23,7 @@ class TestPtabTrial < Minitest::Test
     end
 
     def test_data
+        puts(@trial)
         assert_equal "IPR2016-00831", @trial.trial_number
         assert_equal "Silicon Genesis Corporation", @trial.patent_owner_name
     end   
