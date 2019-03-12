@@ -13,12 +13,12 @@ require 'rake'
 require 'juwelier'
 Juwelier::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
-  gem.name = "patent_client_ruby"
+  gem.name = "patent_client"
   gem.homepage = "http://github.com/parkerhancock/patent_client_ruby"
-  gem.license = "MIT"
+  gem.license = "Apache 2.0"
   gem.summary = %Q{TODO: one-line summary of your gem}
   gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "parker.d.hancock@gmail.com"
+  gem.email = "pypatent2018@gmail.com"
   gem.authors = ["Parker Hancock"]
 
   # dependencies defined in Gemfile
