@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib".freeze]
   s.authors = ["Parker Hancock".freeze]
   s.date = "2019-03-12"
-  s.description = "TODO: longer description of your gem".freeze
+  s.description = "A client for accessing freely-available patent data".freeze
   s.email = "pypatent2018@gmail.com".freeze
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -30,9 +30,9 @@ Gem::Specification.new do |s|
     "test/test_ptab_trial.rb"
   ]
   s.homepage = "http://github.com/parkerhancock/patent_client_ruby".freeze
-  s.licenses = ["Apache 2.0".freeze]
+  s.licenses = ["Apache-2.0".freeze]
   s.rubygems_version = "3.0.2".freeze
-  s.summary = "TODO: one-line summary of your gem".freeze
+  s.summary = "a ruby version of python patent client".freeze
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
